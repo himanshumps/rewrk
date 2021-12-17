@@ -12,6 +12,12 @@ jobs:
     container: quay.io/pypa/manylinux2014_x86_64
     steps:
     - uses: actions/checkout@v2
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+        override: true
     - name: Build
       run: cargo build --verbose
     - name: Run tests
