@@ -19,7 +19,7 @@ jobs:
         profile: minimal
         override: true
     - name: Install pkg-config
-      run: yum --enablerepo=* group install "Development Tools" --setopt=group_package_types=mandatory,default,optional
+      run: yum groups mark install "Development Tools" && yum groups mark convert "Development Tools" && yum groupinstall "Development Tools"
     - name: Build
       run: cargo build --verbose
     - name: Run tests
