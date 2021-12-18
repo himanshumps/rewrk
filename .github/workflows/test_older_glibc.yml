@@ -9,7 +9,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container: quay.io/pypa/manylinux2014_x86_64
+    container: docker.io/himanshumps/ubi7_container
     steps:
     - uses: actions/checkout@v2
     - name: Install Rust
@@ -19,7 +19,7 @@ jobs:
         profile: minimal
         override: true
     - name: Install pkg-config
-      run: apt install pkg-config
+      run: dnf install -y pkg-config
     - name: Build
       run: cargo build --verbose
     - name: Run tests
