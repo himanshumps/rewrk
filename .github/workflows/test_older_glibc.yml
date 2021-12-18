@@ -19,7 +19,7 @@ jobs:
         profile: minimal
         override: true
     - name: Install pkg-config
-      run: yum -y groups mark install "Development Tools" && yum -y groups mark convert "Development Tools" && yum -y groupinstall "Development Tools"
+      run: yum -y openssl openssl-devel
     - name: Build
       run: cargo build --verbose
     - name: Run tests
