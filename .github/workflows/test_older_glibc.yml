@@ -19,7 +19,7 @@ jobs:
         profile: minimal
         override: true
     - name: Install pkg-config
-      run: yum install -y pkg-config
+      run: yum --enablerepo=* install -y pkg-config
     - name: Build
       run: cargo build --verbose
     - name: Run tests
