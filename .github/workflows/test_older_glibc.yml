@@ -19,7 +19,7 @@ jobs:
         profile: minimal
         override: true
     - name: Install pkg-config
-      run: yum -y openssl openssl-devel
+      run: yum -y install openssl openssl-devel
     - name: Build
       run: cargo build --verbose
     - name: Run tests
